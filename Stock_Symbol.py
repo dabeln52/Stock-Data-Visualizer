@@ -13,17 +13,17 @@ while chart_type not in chart_options:
     print("---------------")
     print('1. Bar')
     print('2. Line')
-try:    
-    chart_type = int(input('Enter the chart type you want (1, 2): '))
-except ValueError:
-    print("Plese pick from option above")
-else:   
-    if chart_type == 1:
-     chart_type = pygal.Bar()
-     exit
-    elif chart_type == 2:
+    try:    
+      chart_type = int(input('Enter the chart type you want (1, 2): '))
+    except ValueError:
+        print("Plese pick from option above")
+    else:   
+     if chart_type == 1:
+         chart_type = pygal.Bar()
+         break
+     elif chart_type == 2:
         chart_type = pygal.Line()
-        exit
+        break
 
 
 Time_Series_options = [1,2,3,4]
@@ -36,25 +36,24 @@ while Time_Series not in Time_Series_options:
     print('2. Daily')
     print('3. Weekly')
     print('4. Monthly')
-
-
-try: 
-    Time_Series = int(input('Enter time series option (1, 2, 3, 4):'))
-except ValueError: 
-   print("Please choose from options above.")
-else:
-   if Time_Series == 1:
+    try: 
+     Time_Series = int(input('Enter time series option (1, 2, 3, 4):'))
+    except ValueError: 
+            print("Please choose from options above.")
+            continue
+    else:
+     if Time_Series == 1:
       function = 'TIME_SERIES_INTRADAY'
-      exit
-   elif Time_Series == 2:
+      break
+     elif Time_Series == 2:
       function = 'TIME_SERIES_DAILY'
-      exit
-   elif Time_Series == 3: 
+      break
+     elif Time_Series == 3: 
       function = 'TIME_SERIES_WEEKLY'
-      exit
-   elif Time_Series == 4:
+      break
+     elif Time_Series == 4:
       function ='TIME_SERIES_MONTHLY'
-      exit
+      break
   
         
 
