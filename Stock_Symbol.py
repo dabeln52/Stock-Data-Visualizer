@@ -1,3 +1,8 @@
+import pygal
+import requests
+from alpha_vantage.timeseries import TimeSeries
+
+
 print("Welcome to your stock Visualizer!\n")
 
 Stock_Symbol = input("Enter Symbol you're looking for here: ")
@@ -12,10 +17,12 @@ try:
 except ValueError:
     print("Plese pick from option above")
     if chart_type == 1:
-     chart_type = 'Bar'
-    elif chart_type == '2':
-        chart_type = 'Line'
+     chart_type = pygal.Bar()
+    elif chart_type == 2:
+        chart_type = pygal.Line()
     else:
        print('Please pick from options above')
+
+
 
 
