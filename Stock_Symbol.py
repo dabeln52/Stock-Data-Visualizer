@@ -69,9 +69,22 @@ def timeSeries():
      
 timeSeries()
   
-        
+#Selecting a date
+#Can be used to get a start date and an end date   
 def date():
+    Selected_Date = None
+    Date_Error_Message = "That date is not formatted correctly. Please try again."
 
+    while Selected_Date == None:
+        userResponse = input("Please enter a date in YYYY-MM-DD format: ")
+        if (userResponse.find("-") == -1):
+            print(Date_Error_Message)
+            date()
+        elif (userResponse.count() != 10):
+            print(Date_Error_Message)
+            date()
+        else:
+            Selected_Date = userResponse
+            return Selected_Date
 
-    date()
-
+date()
