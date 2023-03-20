@@ -3,7 +3,7 @@ import requests
 from alpha_vantage.timeseries import TimeSeries
 
 
-print("Welcome to your stock Visualizer!\n")
+print("Welcome to your Stock Visualizer!\n")
 
 Stock_Symbol = input("Enter Symbol you're looking for here: ")
 chart_options = [1, 2]
@@ -13,6 +13,7 @@ while chart_type not in chart_options:
     print("---------------")
     print('1. Bar')
     print('2. Line')
+    print('3. Exit')
     try:    
       chart_type = int(input('Enter the chart type you want (1, 2): '))
     except ValueError:
@@ -23,6 +24,9 @@ while chart_type not in chart_options:
          break
      elif chart_type == 2:
         chart_type = pygal.Line()
+        break
+     elif chart_type == 3:
+        print("Thank You for Using Our Program! Goodbye!")
         break
 
 
@@ -36,6 +40,7 @@ while Time_Series not in Time_Series_options:
     print('2. Daily')
     print('3. Weekly')
     print('4. Monthly')
+    print('5. Exit')
     try: 
      Time_Series = int(input('Enter time series option (1, 2, 3, 4):'))
     except ValueError: 
@@ -54,6 +59,9 @@ while Time_Series not in Time_Series_options:
      elif Time_Series == 4:
       function ='TIME_SERIES_MONTHLY'
       break
+     elif Time_Series == 5:
+        print("Thank You for Using Our Program! Goodbye!")
+        break
   
         
 
