@@ -28,7 +28,7 @@ def getChart():
                 chart_type = pygal.Bar()
                 return chart_type
             elif chart_type == 2:
-                chart_type = pygal.Line()
+                chart_type = pygal.Line(x_label_rotation=20)
                 return chart_type
             elif chart_type == 3:
                 exit()
@@ -145,22 +145,22 @@ def main():
 
         date_data = data['Time Series (15min)'] # any interval changes need to be here too
 
-    elif (function == "TIME_SERIES_DAILY"):
-        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ' # this is an example url
+    elif (function == "TIME_SERIES_DAILY"): # this is a premium feature and does not work right now. if a premium key was used it would likely work
+        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ'
         r = requests.get(url)
         data = r.json()
 
         date_data = data["Time Series (Daily)"]
 
     elif (function == "TIME_SERIES_WEEKLY"):
-        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ' # this is an example url
+        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ'
         r = requests.get(url)
         data = r.json()
 
         date_data = data['Weekly Time Series']
 
     else: # function == TIME_SERIES_MONTHLY
-        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ' # this is an example url
+        url = f'https://www.alphavantage.co/query?function={function}&symbol={Symbol}&apikey=16M4EW4M4DAV8AZZ'
         r = requests.get(url)
         data = r.json()
 
