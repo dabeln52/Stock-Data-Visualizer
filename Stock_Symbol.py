@@ -183,6 +183,13 @@ def main():
             close.append(float(date_data[date]['4. close']))
             labels.append(date)
 
+    # reversing lists so that the graph actually goes left to right
+    open.reverse()
+    high.reverse()
+    low.reverse()
+    close.reverse()
+    labels.reverse()
+
     chart.add('Open', open)
     chart.add('High', high)
     chart.add('Low', low)
